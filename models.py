@@ -1,6 +1,6 @@
 from database import Base
-from sqlalchemy import Column, Integer, String, Boolean, Float
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, Integer, String, Boolean, Float, DateTime
+from sqlalchemy.sql import func
 
 
 # User management yet to be added.
@@ -17,3 +17,5 @@ class Address(Base):
     created_by_ip = Column(String)
     is_active = Column(Boolean, default=True)
     is_disabled = Column(Boolean, default=False)
+    created_at = Column(DateTime, default=func.now())
+    modified_at = Column(DateTime, default=func.now(), onupdate=func.now())
