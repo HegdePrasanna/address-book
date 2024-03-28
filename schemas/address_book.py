@@ -6,7 +6,7 @@ class CreateAddress(BaseModel):
     street: str
     city: str
     state: str
-    postal_code: str
+    postal_code: int
     latitude: float = Field(..., ge=-90.0, le=90.0)
     longitude: float = Field(..., ge=-180.0, le=180.0)
 
@@ -16,7 +16,7 @@ class AllAddress(BaseModel):
     street: str
     city: str
     state: str
-    postal_code: str
+    postal_code: int
     latitude: float = Field(..., ge=-90.0, le=90.0)
     longitude: float = Field(..., ge=-180.0, le=180.0)
     is_active: bool = Field(default=True)
@@ -28,7 +28,7 @@ class AddressUpdate(BaseModel):
     street: Optional[str] = None
     city: Optional[str] = None
     state: Optional[str] = None
-    postal_code: Optional[str] = None
+    postal_code: Optional[int] = None
     latitude: Optional[float] = Field(..., ge=-90.0, le=90.0)
     longitude: Optional[float] = Field(..., ge=-180.0, le=180.0)
 

@@ -117,5 +117,4 @@ async def get_addresses_nearby(id:int, kms:int, db:session, ip_address:str):
         dist = await calculate_distance(target_latitude, target_longitude, address.latitude, address.longitude)
         if dist <= kms:
             nearby_addresses.append(address)
-
     return nearby_addresses

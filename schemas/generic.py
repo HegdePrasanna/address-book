@@ -16,5 +16,6 @@ class BadRequest(BaseModel):
 
 class Unauthorised(BaseModel):
     status: int = Field(default=401, examples=[401])
-    detail: str = Field(default="Not Authorised to Perform This Action", examples=["Not Authorised to Perform This Action"])
+    detail: str = Field(default="Not Authorised to Perform This Action",
+                        examples=["Not Authorised to Perform This Action"])
     data: List = Field(default=[])

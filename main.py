@@ -11,6 +11,7 @@ app = FastAPI()
 app.include_router(address_book.addr_router, prefix="/api")
 app.include_router(address_book.near_by_locations, prefix="/api")
 
+
 def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema
