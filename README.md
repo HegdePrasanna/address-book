@@ -8,6 +8,17 @@ To clone this repository, use the following command:
 git clone https://github.com/HegdePrasanna/address-book.git
 ```
 
+### With Docker
+Build Docker Image
+```bash
+docker built -t addressbook .
+```
+Run Docker Image
+```bash
+docker run -d -p 8000:8000 --name addressbook addressbook
+```
+
+### Without Docker
 Create Anaconda Environment
 ```bash
 conda env create -f environment.yml
